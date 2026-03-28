@@ -2,7 +2,7 @@ import { NextResponse} from "next/server";
 import { prisma } from '@/lib/prisma';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { v4 as uuidv4 } from 'uuid';
-import { Product } from '@prisma/client'; // Import Product type
+type Product = Awaited<ReturnType<typeof prisma.product.findFirst>>;
 
 export async function GET(
     request: Request,

@@ -185,11 +185,26 @@ export default function Home() {
           {/*   <QuickDonate /> */}
         </div>
         {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full flex flex-col items-center relative h-72 md:h-96">
-            {images.length > 0 && (
-              <Image src={images[currentImageIndex]} alt="صورة متغيرة" fill style={{ objectFit: 'contain' }} priority={true} />
-            )}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" dir="rtl">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Right side - Text */}
+            <div className="flex-1 text-right space-y-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-green-700">
+                أسهم الفرحة
+              </h1>
+              <p className="text-xl md:text-2xl font-semibold text-amber-600">
+                &quot;بمساهمتكم.. فرحة العيد تبدأ من هنا&quot;
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                بفضل الله, وبعد إنجاحكم لمبادرة &apos;أسهم الرحمة&apos; في قفة رمضان, نواصل معكم العطاء لإسعاد 280 طفل. هدفنا توفير كسوة العيد كاملة تليق ببراءتهم
+              </p>
+            </div>
+            {/* Left side - Carousel */}
+            <div className="flex-1 relative h-72 md:h-96 w-full">
+              {images.length > 0 && (
+                <Image src={images[currentImageIndex]} alt="صورة متغيرة" fill style={{ objectFit: 'contain' }} priority={true} />
+              )}
+            </div>
           </div>
         </section>
         <section className="py-12 relative">

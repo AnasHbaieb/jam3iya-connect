@@ -94,7 +94,7 @@ export async function PUT(request: Request) {
       return NextResponse.json({ message: 'الترتيب هو نفسه بالفعل' }, { status: 200 });
     }
 
-    await prisma.$transaction(async (prisma) => {
+    await prisma.$transaction(async (tx: any) => {
       const imageAtNewOrder = await prisma.carouselImage.findFirst({
         where: { order: newOrder },
       });
