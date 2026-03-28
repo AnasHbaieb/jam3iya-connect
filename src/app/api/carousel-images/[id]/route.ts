@@ -40,7 +40,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 
     if (existingImageWithOrder && existingImageWithOrder.id !== numericId) {
       // If an image with the target order exists, swap their orders
-      await prisma.$transaction(async (tx: any) => {
+      await prisma.$transaction(async (prisma) => {
         // Get the current order of the image being moved
         const currentImage = await prisma.carouselImage.findUnique({ where: { id: numericId } });
         if (!currentImage) {

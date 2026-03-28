@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { v4 as uuidv4 } from 'uuid';
-type ContentPost = Awaited<ReturnType<typeof prisma.contentPost.findFirst>>;
+import { ContentPost } from '@prisma/client'; // Import ContentPost type
 
 export async function POST(request: Request) {
   try {
